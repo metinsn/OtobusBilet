@@ -19,23 +19,26 @@ namespace OtobusBilet
 
         private void otobusTipCMBOX_SelectedIndexChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < 8; i++)
+
+            int no = 0;
+            for (int i = 0; i < 9; i++)
             {
-                
-
-                for (int j = 0; j < 5; j++)
+               for (int j = 0; j < 5; j++)
                 {
-                    Button btn = new Button();
-                    btn.Width = 60;
-                    btn.Height = 60;
-                    btn.Text = Convert.ToString(i);
-                    btn.Left = (btn.Width) * j;
-                    btn.Top = (btn.Height) * i;
-                    panel1.Controls.Add(btn);
-                }
-
-                
+                    if (j != 2 && (i !=4 || j<2))
+                    {
+                        Button btn = new Button();
+                        btn.Width = 60;
+                        btn.Height = 60;
+                        no++;
+                        btn.Text = Convert.ToString(no);
+                        btn.Left = (btn.Width) * (j);
+                        btn.Top = (btn.Height) * (i);
+                        panel1.Controls.Add(btn);
+                    }
+                }              
             }
+
         }
     }
 }
