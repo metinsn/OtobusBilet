@@ -17,28 +17,68 @@ namespace OtobusBilet
             InitializeComponent();
         }
 
+        YolcuForm yform = new YolcuForm();
+
         private void otobusTipCMBOX_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            int no = 0;
-            for (int i = 0; i < 9; i++)
+            panel1.Controls.Clear();
+            if (otobusTipCMBOX.SelectedIndex.ToString() == "0")
             {
-               for (int j = 0; j < 5; j++)
+                int no = 0;
+                for (int i = 0; i < 9; i++)
                 {
-                    if (j != 2 && (i !=4 || j<2))
+                    for (int j = 0; j < 5; j++)
                     {
-                        Button btn = new Button();
-                        btn.Width = 60;
-                        btn.Height = 60;
-                        no++;
-                        btn.Text = Convert.ToString(no);
-                        btn.Left = (btn.Width) * (j);
-                        btn.Top = (btn.Height) * (i);
-                        panel1.Controls.Add(btn);
+                        if (j != 2 && (i != 4 || j < 2))
+                        {
+                            Button btn = new Button();
+                            btn.Width = 60;
+                            btn.Height = 60;
+                            no++;
+                            btn.Text = Convert.ToString(no);
+                            btn.Left = (btn.Width) * (j);
+                            btn.Top = (btn.Height) * (i);
+                            btn.Click += Btn_click;
+                            panel1.Controls.Add(btn);
+                        }
                     }
-                }              
+                }
+            }
+            else if (otobusTipCMBOX.SelectedIndex.ToString() == "1")
+            {
+                int no = 0;
+                for (int i = 0; i < 8; i++)
+                {
+                    for (int j = 0; j < 5; j++)
+                    {
+                        if (j != 2 && (i != 3 || j < 2))
+                        {
+                            Button btn = new Button();
+                            btn.Width = 60;
+                            btn.Height = 60;
+                            no++;
+                            btn.Text = Convert.ToString(no);
+                            btn.Left = (btn.Width) * (j);
+                            btn.Top = (btn.Height) * (i);
+                            btn.Click += Btn_click;
+                            panel1.Controls.Add(btn);
+                        }
+                    }
+
+                }
+
             }
 
         }
+
+        private void Btn_click(object sender, EventArgs v)
+        {
+            Button secbtn = sender as Button;
+            yform.Show();
+            yform.Text = "Koltuk No : " + secbtn.Text;
+            yform.KoltukNoTBOX.Text = secbtn.Text;
+        }
+
+
     }
 }
