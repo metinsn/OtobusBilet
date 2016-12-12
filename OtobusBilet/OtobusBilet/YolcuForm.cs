@@ -18,7 +18,7 @@ namespace OtobusBilet
         }
         private void kaydetBTN_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Add(KoltukNoTBOX.Text +" - "+ adSoyadTBOX.Text);
+            listBox1.Items.Add("Koltuk No: " + KoltukNoTBOX.Text +" - Ad soyad :"+ adSoyadTBOX.Text);
             listBox1.Refresh();
             System.Threading.Thread.Sleep(800);
             this.Hide();

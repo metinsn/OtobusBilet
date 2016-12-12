@@ -76,8 +76,10 @@ namespace OtobusBilet
         {
             Button secbtn = sender as Button;
             yform.Show();
+            secbtn.BackColor = Color.FromArgb(255, 70, 70);
             yform.KoltukNoTBOX.Text = secbtn.Text;
             yform.adSoyadTBOX.Text ="";
+            secbtn.Enabled = false;
         }
 
 
