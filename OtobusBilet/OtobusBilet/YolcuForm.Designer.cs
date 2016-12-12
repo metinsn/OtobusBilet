@@ -120,9 +120,9 @@
 
         private System.Windows.Forms.Label KoltukNoLBL;
         private System.Windows.Forms.Label adSoyadLBL;
-        private System.Windows.Forms.TextBox adSoyadTBOX;
         private System.Windows.Forms.Button kaydetBTN;
         public System.Windows.Forms.TextBox KoltukNoTBOX;
         private System.Windows.Forms.ListBox listBox1;
+        public System.Windows.Forms.TextBox adSoyadTBOX;
     }
 }

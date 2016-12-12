@@ -16,12 +16,12 @@ namespace OtobusBilet
         {
             InitializeComponent();            
         }
-        List<string> yolcular = new List<string>();
         private void kaydetBTN_Click(object sender, EventArgs e)
         {
-            yolcular.Add(adSoyadTBOX.Text);
-            listBox1.Items.AddRange(yolcular.ToArray());
-            MessageBox.Show(adSoyadTBOX.Text + " kaydedildi");
+            listBox1.Items.Add(KoltukNoTBOX.Text +" - "+ adSoyadTBOX.Text);
+            listBox1.Refresh();
+            System.Threading.Thread.Sleep(800);
+            this.Hide();
         }
     }
 }

@@ -18,6 +18,7 @@ namespace OtobusBilet
         }
 
         YolcuForm yform = new YolcuForm();
+        public Button btn;
 
         private void otobusTipCMBOX_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -75,8 +76,8 @@ namespace OtobusBilet
         {
             Button secbtn = sender as Button;
             yform.Show();
-            yform.Text = "Koltuk No : " + secbtn.Text;
             yform.KoltukNoTBOX.Text = secbtn.Text;
+            yform.adSoyadTBOX.Text ="";
         }
 
 
